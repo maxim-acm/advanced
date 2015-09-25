@@ -159,6 +159,10 @@ a:hover {
 
 /* Column Captions */
 
+.cart__item_tmpl {
+    display: none;
+}
+
 .columnCaptions {
     font-size: 12px;
 
