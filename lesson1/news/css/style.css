@@ -592,9 +592,21 @@ nav #nav > li ul a:hover {
 }
 #posts-list .page-navigation .nav-next {
   float: left;
-  margin-right: 20px;
   background: url(../img/pagination.png) no-repeat 0px 0px;
 }
+
+#posts-list .page-navigation .nav-page {
+  background-color: #E09402;
+  border: 4px solid #C98501;
+  float: left;
+  margin: 0 5px;
+}
+
+#posts-list .page-navigation .nav-page a {
+  width: 40px;
+  line-height: 32px;
+}
+
 #posts-list .page-navigation .nav-previous {
   float: right;
   background: url(../img/pagination.png) no-repeat right -59px;
