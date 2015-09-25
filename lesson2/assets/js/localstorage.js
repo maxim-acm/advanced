@@ -3,8 +3,11 @@
     var Local = function() {
         var ls = localStorage;
 
-        this.init = function () {
-            ls['cart'] = '[]';
+        this.initField = function (field) {
+            console.log(1);
+            if (!ls[field]) {
+                this.clearField(field);
+            }
         };
 
         // add some item to array in ls
@@ -19,7 +22,10 @@
             return JSON.parse(ls[field]);
         };
 
-        this.init();
+        this.clearField = function (field) {
+            ls[field] = '[]';
+        };
+
     };
 
     window.ls = new Local();
