@@ -1,18 +1,20 @@
+
 module.exports = {
     'Nagative: test registration form' : function (client) {
         var registration = client.page.registration();
 
         registration.navigate()
-            .setValue('@nameInput', '')
-            .setValue('@emailInput', 'user@mail.com')
-            .setValue('@usernameInput', 'someuser')
-            .setValue('@passwordInput', 'pass')
-            .setValue('@repasswordInput', 'repassword')
-            .selectOption('@monthSelect', '02')
-            .setValue('@dayInput', 20)
-            .setValue('@yearInput', 1930)
-            .selectOption('@genderSelect', 'm')
-            .setValue('@phoneInput', '123123123')
+            .enterRegistrationData({
+                name:       '',
+                email:      'user@mail.com',
+                password:   'pass',
+                repassword: 'password',
+                month:      '02',
+                day:         20,
+                year:        1940,
+                gender:      'm',
+                phone:       '123123123'
+            })
             .submit();
 
         client.pause(1000);

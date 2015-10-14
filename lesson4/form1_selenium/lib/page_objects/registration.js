@@ -11,6 +11,24 @@ var commands = {
                    .click(dropdown)
                    .waitForElementVisible(optionSelector, 1000)
                    .click(optionSelector);
+    },
+
+    enterRegistrationData: function(data) {
+        return this.setValue('@nameInput',        data.name       || '')
+                   .setValue('@emailInput',       data.email      || '')
+                   .setValue('@usernameInput',    data.username   || '')
+                   .setValue('@passwordInput',    data.password   || '')
+                   .setValue('@repasswordInput',  data.repassword || '')
+                   .selectOption('@monthSelect',  data.month      || '')
+                   .setValue('@dayInput',         data.day        || '')
+                   .setValue('@yearInput',        data.year       || '')
+                   .selectOption('@genderSelect', data.gender     || '')
+                   .setValue('@phoneInput',       data.phone      || '');
+    },
+
+    getRegistrationErrors: function(cb) {
+        cb({});
+        return this;
     }
 };
 
