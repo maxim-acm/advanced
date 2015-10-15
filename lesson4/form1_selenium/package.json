@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "TEST_MODE=1 ./node_modules/nightwatch/bin/nightwatch -e local"
+    "test": "nightwatch -e local"
   },
   "author": "",
   "license": "ISC",
