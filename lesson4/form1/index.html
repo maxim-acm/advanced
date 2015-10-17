@@ -58,28 +58,33 @@
                     <div class='error' data-error-for='repassword'>  </div>
                 </div>
 
-               <fieldset>
-                 <label>Birthday</label>
-                  <label class="month">
-                    <select id='month' class="select-style" name="BirthMonth">
-                          <option value="">Month</option>
-                          <option  value="01">January</option>
-                          <option value="02">February</option>
-                          <option value="03" >March</option>
-                          <option value="04">April</option>
-                          <option value="05">May</option>
-                          <option value="06">June</option>
-                          <option value="07">July</option>
-                          <option value="08">August</option>
-                          <option value="09">September</option>
-                          <option value="10">October</option>
-                          <option value="11">November</option>
-                          <option value="12" >December</option>
-                     </select>
-                </label>
-                <label>Day<input id='day' class="birthday" maxlength="2" name="BirthDay"  placeholder="Day" ></label>
-                <label>Year <input id='year' class="birthyear" maxlength="4" name="BirthYear" placeholder="Year" ></label>
-              </fieldset>
+                <div class='input-block'>
+                   <fieldset>
+                     <label>Birthday</label>
+                      <label class="month">
+                        <select id='month' class="select-style" name="BirthMonth">
+                              <option value="">Month</option>
+                              <option  value="01">January</option>
+                              <option value="02">February</option>
+                              <option value="03" >March</option>
+                              <option value="04">April</option>
+                              <option value="05">May</option>
+                              <option value="06">June</option>
+                              <option value="07">July</option>
+                              <option value="08">August</option>
+                              <option value="09">September</option>
+                              <option value="10">October</option>
+                              <option value="11">November</option>
+                              <option value="12" >December</option>
+                         </select>
+                    </label>
+                    <label>Day<input id='day' class="birthday" maxlength="2" name="BirthDay"  placeholder="Day" ></label>
+                    <label>Year <input id='year' class="birthyear" maxlength="4" name="BirthYear" placeholder="Year" ></label>
+                  </fieldset>
+
+                 <div class='error' data-error-for='birthday'></div>
+            </div>
+
 
             <select class="select-style gender" name="gender" id='gender'>
                 <option value="select">i am..</option>
@@ -88,8 +93,12 @@
                 <option value="others">Other</option>
             </select><br><br>
 
-            <p class="contact"><label for="phone">Mobile phone</label></p>
-            <input id="phone" name="phone" placeholder="phone number"  type="text"> <br>
+            <div class='input-block'>
+                <p class="contact"><label for="phone">Mobile phone</label></p>
+                <input id="phone" name="phone" placeholder="phone number"  type="text"> <br>
+                <div class='error' data-error-for='phone'>  </div>
+            </div>
+
             <input class="buttom" name="submit" id="submit" tabindex="5" value="Sign me up!" type="submit">
    </form>
 </div>

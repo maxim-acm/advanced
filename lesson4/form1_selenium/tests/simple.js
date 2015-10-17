@@ -1,27 +1,24 @@
+var FIXTURES = require('./fixtures.json');
+
+function checkFormErrors(pageObject, expectedErrors) {
+    for (var field in expectedErrors) {
+        var elementName = '@' + field + 'Error';
+
+        pageObject.expect.element(elementName).text.to.equal( expectedErrors[field] )
+    }
+}
 
 module.exports = {
-    'Nagative: test registration form' : function (client) {
+    'Negative: test registration form' : function (client) {
         var registration = client.page.registration();
 
-        registration.navigate()
-            .enterRegistrationData({
-                name:       '',
-                email:      'user@mail.com',
-                password:   'pass',
-                repassword: 'password',
-                month:      '02',
-                day:         20,
-                year:        1940,
-                gender:      'm',
-                phone:       '123123123'
-            })
-            .submit();
+        FIXTURES.forEach(function(data) {
+            registration.navigate()
+                .enterRegistrationData(data.inputs)
+                .submit();
 
-        client.pause(1000);
-
-        registration.expect.element('@nameError').text.to.equal('Name is required')
-        registration.expect.element('@passwordError').text.to.equal('Password is too short');
-
+            checkFormErrors(registration, data.errors);
+        });
 
         client.end();
     }

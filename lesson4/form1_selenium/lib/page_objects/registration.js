@@ -56,9 +56,7 @@ module.exports = {
         usernameError:   { selector: '[data-error-for="username"]' },
         passwordError:   { selector: '[data-error-for="password"]' },
         repasswordError: { selector: '[data-error-for="repassword"]' },
-        dayError:        { selector: '[data-error-for="day"]' },
-        monthError:      { selector: '[data-error-for="month"]' },
-        yearError:       { selector: '[data-error-for="year"]' },
+        birthdayError:   { selector: '[data-error-for="birthday"]' },
         genderError:     { selector: '[data-error-for="gender"]' },
         phoneError:      { selector: '[data-error-for="phone"]' },
 
