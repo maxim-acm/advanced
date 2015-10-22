@@ -96,35 +96,21 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>f1</th>
-                            <th>f2</th>
-                            <th>f3</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Price</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {{#each properties}}
                         <tr>
                             <td>
-                                <img class='property-thumbnail img-rounded' src="http://3.l.uk.nestoria.nestimg.com/lis/3/e/f/d5c1e13756b3eee27ea929c780fde2c586b70.2.jpg" alt="..." class="img-rounded" />
+                                <img class='property-thumbnail img-rounded' src="{{imgURL}}" alt="..." class="img-rounded" />
                             </td>
-                            <td>v2</td>
-                            <td>v3</td>
+                            <td>{{title}}</td>
+                            <td>{{price}} {{currency}}</td>
                         </tr>
-
-                        <tr>
-                            <td>
-                                <img class='property-thumbnail img-rounded' src="http://3.l.uk.nestoria.nestimg.com/lis/3/e/f/d5c1e13756b3eee27ea929c780fde2c586b70.2.jpg" alt="..." class="img-rounded" />
-                            </td>
-                            <td>v2</td>
-                            <td>v3</td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <img class='property-thumbnail img-rounded' src="http://3.l.uk.nestoria.nestimg.com/lis/3/e/f/d5c1e13756b3eee27ea929c780fde2c586b70.2.jpg" alt="..." class="img-rounded" />
-                            </td>
-                            <td>v2</td>
-                            <td>v3</td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>
