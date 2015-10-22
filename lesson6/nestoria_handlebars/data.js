@@ -1,4 +1,4 @@
-{
+var DATA = {
    "request" : {
       "country" : "uk",
       "language" : "en",
