@@ -39,21 +39,23 @@
           <a class="navbar-brand" href="#">Project name</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
 
     <div class="container">
       <!-- Example row of columns -->
+      <div class="row">
+            <div class="col-md-12">
+            <form role="form">
+                <div class="form-group">
+                  <input type="text" placeholder="Enter city name" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">Search</button>
+            </form>
+          </div>
+        </div>
       <div class="row">
         <div class="col-md-12">
           <div id='content'> </div>
@@ -71,6 +73,7 @@
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
+        <script src="js/moment.js"></script>
         <script src="data.js"></script>
         <script src="js/handlebars-latest.js"></script>
 
@@ -92,7 +95,7 @@
             <h2>Properties in {{location}}</h2>
             <div class="body">
                 <div> {{numberOfProperties}} properties in list </div>
-                <div> <b>Date</b>: {{searchDate}} </div>
+                <div> <b>Date</b>: {{niceDate searchDate}} </div>
                 <table class="table table-striped">
                     <thead>
                         <tr>
