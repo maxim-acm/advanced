@@ -56,7 +56,6 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-12">
-          <h2>Rendred template</h2>
           <div id='content'> </div>
         </div>
       </div>
@@ -90,9 +89,44 @@
 
         <script id="entry-template" type="text/x-handlebars-template">
           <div class="entry">
-            <h1>{{title}}</h1>
+            <h2>Properties in {{location}}</h2>
             <div class="body">
-              {{body}}
+                <div> {{numberOfProperties}} properties in list </div>
+                <div> <b>Date</b>: {{searchDate}} </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>f1</th>
+                            <th>f2</th>
+                            <th>f3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img class='property-thumbnail img-rounded' src="http://3.l.uk.nestoria.nestimg.com/lis/3/e/f/d5c1e13756b3eee27ea929c780fde2c586b70.2.jpg" alt="..." class="img-rounded" />
+                            </td>
+                            <td>v2</td>
+                            <td>v3</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <img class='property-thumbnail img-rounded' src="http://3.l.uk.nestoria.nestimg.com/lis/3/e/f/d5c1e13756b3eee27ea929c780fde2c586b70.2.jpg" alt="..." class="img-rounded" />
+                            </td>
+                            <td>v2</td>
+                            <td>v3</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <img class='property-thumbnail img-rounded' src="http://3.l.uk.nestoria.nestimg.com/lis/3/e/f/d5c1e13756b3eee27ea929c780fde2c586b70.2.jpg" alt="..." class="img-rounded" />
+                            </td>
+                            <td>v2</td>
+                            <td>v3</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
           </div>
         </script>

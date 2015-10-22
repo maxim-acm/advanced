@@ -1,8 +1,9 @@
 $(document).ready(function() {
 
     var data = {
-        title: 'GOIT',
-        body: 'The best'
+        location: DATA.request.location,
+        numberOfProperties: DATA.response.listings.length,
+        searchDate: DATA.response.created_http
     };
 
     var rendered = renderTemplate('entry-template', data);
