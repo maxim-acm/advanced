@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.0.2",
     "chai": "^3.4.0",
     "chai-stats": "^0.3.0",
     "istanbul": "^0.4.0",
