@@ -1,5 +1,5 @@
 var mathUtils = require('../src/mathUtils');
-var chai      = require('chai')
+var chai      = require('chai');
 var chaiStats = require('chai-stats');
 
 chai.use(chaiStats);
@@ -8,12 +8,12 @@ var assert = chai.assert;
 
 suite('mathUtils average');
 
-test('Positive: mathUtils.average([3,4,5])', function() {
-    assert.almostEqual( mathUtils.average([3,4,5]), 4);
-});
-
 test('Positive: mathUtils.average([1,10,33, 44444, 10000000000])', function() {
     assert.almostEqual( mathUtils.average([1,10,33, 44444, 10000000000]), 2000008897.6);
+});
+
+test('Positive: mathUtils.average([3,4,5])', function() {
+    assert.almostEqual( mathUtils.average([3,4,5]), 4);
 });
 
 test('Positive: mathUtils.average([1.5, 2.5, 3.5])', function() {
@@ -24,13 +24,37 @@ test('Positive: mathUtils.average([-2, -3, -4])', function() {
     assert.almostEqual( mathUtils.average([-2, -3, -4]), -3);
 });
 
-test('Positive: mathUtils.average([-2, -3, -4])', function() {
+test('Positive: mathUtils.average([-1.5, -2.5, -3.5])', function() {
     assert.almostEqual( mathUtils.average([-1.5, -2.5, -3.5]), -2.5);
 });
 
 test('Negative: mathUtils.average(3,4,5)', function() {
     assert.throw(function() {
         mathUtils.average(3,4,5);
+    }, 'ARGUMENT_IS_NOT_ARRAY');
+});
+
+test('Negative: mathUtils.average("somestring")', function() {
+    assert.throw(function() {
+        mathUtils.average("somestring");
+    }, NaN);
+});
+
+test('Negative: mathUtils.average(["23", "dsd"])', function(){
+   assert.throw(function () {
+       mathUtils.average(['23', 'dsd']);
+   }, 'ONLY_NUMERIC_VALUES_ARE_SUPPORTED');
+});
+
+test('Negative: mathUtils.average()', function(){
+    assert.throw(function () {
+        mathUtils.average();
+    }, undefined);
+});
+
+test('Negative: mathUtils.average("somestring")', function() {
+    assert.throw(function() {
+        mathUtils.average("somestring");
     }, 'ARGUMENT_IS_NOT_ARRAY');
 });
 

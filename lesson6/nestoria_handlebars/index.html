@@ -48,11 +48,11 @@
       <!-- Example row of columns -->
       <div class="row">
             <div class="col-md-12">
-            <form role="form">
+            <form role="form" name="requestCity">
                 <div class="form-group">
-                  <input type="text" placeholder="Enter city name" class="form-control">
+                  <input type="text" name="cityName" placeholder="Enter city name" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-success">Search</button>
+                <div class="btn btn-success" id="search-btn">Search</div>
             </form>
           </div>
         </div>
@@ -67,7 +67,10 @@
       <footer>
         <p>&copy; Company 2015</p>
       </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
@@ -88,14 +91,13 @@
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
 
-
-
         <script id="entry-template" type="text/x-handlebars-template">
           <div class="entry">
             <h2>Properties in {{location}}</h2>
             <div class="body">
                 <div> {{numberOfProperties}} properties in list </div>
                 <div> <b>Date</b>: {{niceDate searchDate}} </div>
+                <div id="prew-size">Preview :<span class="prew-s hide">SMALL</span><span class="prew-b ">BIG</span></div>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -106,13 +108,29 @@
                     </thead>
                     <tbody>
                         {{#each properties}}
-                        <tr>
+                        <tr class="proposition">
                             <td>
                                 <img class='property-thumbnail img-rounded' src="{{imgURL}}" alt="..." class="img-rounded" />
                             </td>
                             <td>{{title}}</td>
                             <td>{{price}} {{currency}}</td>
                         </tr>
+
+                        <div class="container proposition-full hide">
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <img class='img-responsive img-rounded' src="{{imgURL}}" alt="..." class="img-rounded" />
+                                </div>
+                                <div class="col-md8">
+                                    <p class="price">{{price}} {{currency}}</p>
+                                    <h3>{{title}}</h3>
+                                    <p>{{summary}}</p>
+                                    <p>Bedroom number: {{bedroom_number}}, {{keywords}}</p>
+                                    <a class="more" href="{{lister_url}}">MORE</a>
+                                </div>
+                            </div>
+                        </div>
                         {{/each}}
                     </tbody>
                 </table>

@@ -15,4 +15,67 @@ body {
 }
 
 
+.property-full {
+    width: 200px;
+    height: 200px;
+}
+
+.proposition:hover {
+    cursor: pointer;
+    background-color: #adadad !important;
+}
+
+.price {
+    background-color: #303237;
+    color: #fff;
+    opacity: .9;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.more {
+    background-color: #ac2925;
+    color: #fff;
+    opacity: .9;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.proposition-full {
+    display: block;
+    margin: 15px 0;
+}
+
+#prew-size {
+    background-color: #adadad;
+    color: #fff;
+    opacity: .9;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+
 
