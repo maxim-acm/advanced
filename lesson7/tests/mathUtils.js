@@ -68,6 +68,28 @@ test('Positive: mathUtils.averageAsync([3,4,5])', function(done) {
     });
 });
 
+suite('mathUtils median');
+
+test('Positive: mathUtils.median([1, 2])', function() {
+    assert.almostEqual( mathUtils.median([1,2]), 1.5);
+});
+
+test('Positive: mathUtils.median([1, 1, 1, 5])', function() {
+    assert.almostEqual( mathUtils.median([1, 1, 1, 5]), 1);
+});
+
+test('Positive: mathUtils.median([-1, -1, -1, -5])', function() {
+    assert.almostEqual( mathUtils.median([-1, -1, -1, -5]), -1);
+});
+
+test('Positive: mathUtils.median([1.5, 1.5, 2.5, 1.5])', function() {
+    assert.almostEqual( mathUtils.median([1.5, 1.5, 2.5, 1.5]), 1.5);
+});
+
+test('Positive: mathUtils.median([1, 2, 3, 4])', function() {
+    assert.almostEqual( mathUtils.median([1, 2, 3, 4]), 2.5);
+});
+
 
 // Positive (DONE)
 // [1,10,33, 44444, 10000000000]
@@ -78,8 +100,22 @@ test('Positive: mathUtils.averageAsync([3,4,5])', function(done) {
 // Negative (Done)
 // mathUtils.average(3,4,5)
 
-// Negative (TODO)
+// Negative (TODO-done)
 // mathUtils.average([])
 // mathUtils.average(['23', 'dsd'])
 // mathUtils.average()
 // mathUtils.average("somestring")
+
+// Positive - median
+// [1,2]
+// [1,1,1,5]
+// [-1,-1,-1,-5]
+// [1.5, 1.5, 2.5, 1.5]
+// [1, 2, 3, 4]
+
+// Negative - median
+// mathUtils.median(1,1,3);
+// mathUtils.median([]);
+// mathUtils.median('string');
+// mathUtils.median(['a', 'b', 'c']);
+
