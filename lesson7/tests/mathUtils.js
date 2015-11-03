@@ -68,6 +68,7 @@ test('Positive: mathUtils.averageAsync([3,4,5])', function(done) {
     });
 });
 
+
 suite('mathUtils median');
 
 test('Positive: mathUtils.median([1, 2])', function() {
@@ -88,6 +89,19 @@ test('Positive: mathUtils.median([1.5, 1.5, 2.5, 1.5])', function() {
 
 test('Positive: mathUtils.median([1, 2, 3, 4])', function() {
     assert.almostEqual( mathUtils.median([1, 2, 3, 4]), 2.5);
+});
+
+
+test('Negative: mathUtils.median(1, 1, 3)', function() {
+    assert.throw(function() {
+        mathUtils.median(1 , 1, 3);
+    }, 'ARGUMENT_IS_NOT_ARRAY');
+});
+
+test('Negative: mathUtils.median("string")', function() {
+    assert.throw(function() {
+        mathUtils.median('string');
+    }, 'ARGUMENT_IS_NOT_ARRAY');
 });
 
 
